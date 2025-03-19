@@ -1,5 +1,6 @@
 <?php
     $columnsNumber = 4;
+    $title = 'Training PHP';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,10 @@
                 <div class="row">
                     <div class="col text-center">
                         <h1>
-                            Training PHP
+                            <?php 
+                                echo $title;
+                                // var_dump($title);
+                            ?>
                         </h1>
                     </div>
                 </div>

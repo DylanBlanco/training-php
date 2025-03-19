@@ -1,5 +1,43 @@
 <?php
     $columnsNumber = 4;
+    $title = 'Recupero Dati';
+    $persons = [
+        [
+            "nome" => "Luca",
+            "eta" => 28,
+            "data_nascita" => "1996-04-15",
+            "paese_nascita" => "Italia",
+            "citta_residenza" => "Milano"
+        ],
+        [
+            "nome" => "Sofia",
+            "eta" => 32,
+            "data_nascita" => "1992-09-21",
+            "paese_nascita" => "Spagna",
+            "citta_residenza" => "Barcellona"
+        ],
+        [
+            "nome" => "Marco",
+            "eta" => 25,
+            "data_nascita" => "1999-01-10",
+            "paese_nascita" => "Italia",
+            "citta_residenza" => "Roma"
+        ],
+        [
+            "nome" => "Elena",
+            "eta" => 30,
+            "data_nascita" => "1994-06-05",
+            "paese_nascita" => "Francia",
+            "citta_residenza" => "Parigi"
+        ],
+        [
+            "nome" => "David",
+            "eta" => 27,
+            "data_nascita" => "1997-03-12",
+            "paese_nascita" => "Germania",
+            "citta_residenza" => "Berlino"
+        ]
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +58,12 @@
         <div class="container mb-3">
             <div class="row">
                 <h1>
-                    Recupero dati
+                    <?php
+                        // var_dump($title);
+                        strlen($title);
+                        echo $title;
+                        // echo strlen($title);
+                    ?>
                 </h1>
             </div>
         </div>
@@ -66,20 +109,38 @@
                 ?>
             </div>
         </div>
-    </main>
 
-    <!-- <div class="container bg-success bg-gradient">
-        <div class="row">
-            <?php
-                for ($i = 0; $i < $columnsNumber; $i++) {
-            ?>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    Colonna <?php echo $i + 1; ?>
+        <div class="container bg-success bg-gradient pt-3">
+            <div class="row">
+                <?php
+                    foreach ($persons as $person) {
+                ?>
+                <div class="col-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3>
+                                Nome: <?php echo $person['nome']; ?>
+                            </h3>
+                            <p>
+                                Età: <?php echo $person['eta']; ?>
+                            </p>
+                            <p>
+                                Data di Nascita: <?php echo $person['data_nascita']; ?>
+                            </p>
+                            <p>
+                                Paese di Nascita: <?php echo $person['paese_nascita']; ?>
+                            </p>
+                            <p>
+                                Città di residenza: <?php echo $person['citta_residenza']; ?>
+                            </p>
+                        </div> 
+                    </div>
                 </div>
-            <?php
-                }
-            ?>
+                <?php
+                    }
+                ?>
+            </div>
         </div>
-    </div> -->
+    </main>
 </body>
 </html>
